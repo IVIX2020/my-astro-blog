@@ -1,0 +1,36 @@
+name: Deploy Astro to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # mainブランチにプッシュされたら実行
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: github-pages # Pages環境を指定
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # 最新の安定バージョンを指定
+
+      - name: Install dependencies
+        run: npm ci # 依存関係をクリーンにインストール
+
+      - name: Build project
+        run: npm run build # Astroをビルドし、distフォルダを作成
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # GitHubのアクセス権限を自動で使用
+          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          # ビルドされたdistフォルダの中身を
+          publish_dir: ./dist 
+          # gh-pagesブランチにプッシュする
+          publish_branch: gh-pages

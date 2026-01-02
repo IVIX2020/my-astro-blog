@@ -1,0 +1,14 @@
+[data-callout]{
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  margin: 1rem 0;
+}
+
+[data-callout-title]{
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+[data-callout-body] > :first-child{ margin-top: 0; }
+[data-callout-body] > :last-child{ margin-bottom: 0; }

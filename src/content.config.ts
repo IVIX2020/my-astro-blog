@@ -15,5 +15,18 @@ const blog = defineCollection({
 			heroImage: image().optional(),
 		}),
 });
+const products = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      kind: z.enum(["game", "tool", "music", "article", "other"]).default("other"),
+      pubDate: z.date().optional(),
+      summary: z.string().optional(),
+      tags: z.array(z.string()).default([]),
+      banner: image(), // ★これが重要
+      url: z.string().url().optional(),
+    }),
+});
 
-export const collections = { blog };
+export const collections = { blog, products };

@@ -4,7 +4,6 @@ import ProductPost from '../../layouts/ProductPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('products');
-	// 外部リンクを持たない記事のみ、詳細ページを生成する
 	return posts
 		.filter((post) => !post.data.url)
 		.map((post) => ({
@@ -15,9 +14,8 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'products'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
+console.log('post.rawBody:', post.rawBody); // Keep for debugging if needed, but it's undefined
 ---
 
-<ProductPost {...post.data}>
-	<Content />
+<ProductPost {...post.data} contentBody={post.body}>
 </ProductPost>

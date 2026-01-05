@@ -104,7 +104,7 @@ const pageTitle = `${SITE_TITLE} / Products`;
       <ul class="grid">
         {
           items.map((item) => {
-            const href = item.data.url ?? `/my-astro-blog/products/${item.id}/`;
+            const href = item.data.url ?? `/products/${item.slug}/`;
             return (
               <li class="card">
                 <a href={href}>

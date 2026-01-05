@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game</title>
+  <style>
+    html, body { height: 100%; margin: 0; background: #111; }
+    #unity-container { height: 100%; display: grid; place-items: center; }
+    #unity-canvas {
+      height: 80vh;
+      width: calc(80vh * 9 / 16);
+      max-width: 90vw;
+      background: #000;
+    }
+    #unity-loading { position: fixed; left: 12px; bottom: 12px; color: #ddd; font: 14px/1.4 system-ui; }
+  </style>
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="unity-loading">Loading...</div>
+
+  <script src="./gameofbanaanv2.loader.js"></script>
+  <script>
+    const canvas = document.querySelector("#unity-canvas");
+    const loading = document.querySelector("#unity-loading");
+
+    // 重要：ファイル名はあなたのBuildに合わせている
+    const config = {
+      dataUrl: "./gameofbanaanv2.data",
+      frameworkUrl: "./gameofbanaanv2.framework.js",
+      codeUrl: "./gameofbanaanv2.wasm",
+      companyName: "Company",
+      productName: "Game",
+      productVersion: "1.0",
+    };
+
+    createUnityInstance(canvas, config, (progress) => {
+      loading.textContent = `Loading... ${Math.round(progress * 100)}%`;
+    }).then(() => {
+      loading.remove();
+    }).catch((err) => {
+      loading.textContent = "Failed to load. Open DevTools console.";
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

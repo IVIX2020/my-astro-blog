@@ -1,51 +1,40 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pain Pong</title>
-  <style>
-    html, body { height: 100%; margin: 0; background: #111; }
-    #unity-container { height: 100%; display: grid; place-items: center; }
-    #unity-canvas {
-      /* Pain Pong のアスペクト比に合わせて調整 */
-      width: 80vw; 
-      height: calc(80vw * 2224 / 1668); /* 元の解像度 1668x2224 からアスペクト比を計算 */
-      max-height: 90vh;
-      max-width: calc(90vh * 1668 / 2224);
-      background: #000;
-    }
-    #unity-loading { position: fixed; left: 12px; bottom: 12px; color: #ddd; font: 14px/1.4 system-ui; }
-  </style>
-</head>
-<body>
-  <div id="unity-container">
-    <canvas id="unity-canvas"></canvas>
-  </div>
-  <div id="unity-loading">Loading...</div>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | pain-pong</title>
+  </head>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <canvas id="unity-canvas" width=1668 height=2224 tabindex="-1" style="width: 1668px; height: 2224px; background: #231F20"></canvas>
+    <script src="Build/Build.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
 
-  <script src="./Reflexion.loader.js"></script>
-  <script>
-    const canvas = document.querySelector("#unity-canvas");
-    const loading = document.querySelector("#unity-loading");
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
 
-    const config = {
-      dataUrl: "./Reflexion.data",
-      frameworkUrl: "./Reflexion.framework.js",
-      codeUrl: "./Reflexion.wasm",
-      companyName: "IvixDesign", // 元のindex.htmlから取得
-      productName: "Reflexxion",   // 元のindex.htmlから取得
-      productVersion: "1.0.2",   // 元のindex.htmlから取得
-    };
+        document.body.style.textAlign = "left";
+      }
 
-    createUnityInstance(canvas, config, (progress) => {
-      loading.textContent = `Loading... ${Math.round(progress * 100)}%`;
-    }).then(() => {
-      loading.remove();
-    }).catch((err) => {
-      loading.textContent = "Failed to load. Open DevTools console.";
-      console.error(err);
-    });
-  </script>
-</body>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Build.data",
+        frameworkUrl: "Build/Build.framework.js",
+        codeUrl: "Build/Build.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "IvixDesign",
+        productName: "pain-pong",
+        productVersion: "1.0.2",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
 </html>

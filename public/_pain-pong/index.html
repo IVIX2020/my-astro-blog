@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pain Pong</title>
+  <style>
+    html, body { height: 100%; margin: 0; background: #111; }
+    #unity-container { height: 100%; display: grid; place-items: center; }
+    #unity-canvas {
+      /* Pain Pong のアスペクト比に合わせて調整 */
+      width: 80vw; 
+      height: calc(80vw * 2224 / 1668); /* 元の解像度 1668x2224 からアスペクト比を計算 */
+      max-height: 90vh;
+      max-width: calc(90vh * 1668 / 2224);
+      background: #000;
+    }
+    #unity-loading { position: fixed; left: 12px; bottom: 12px; color: #ddd; font: 14px/1.4 system-ui; }
+  </style>
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="unity-loading">Loading...</div>
+
+  <script src="./Reflexion.loader.js"></script>
+  <script>
+    const canvas = document.querySelector("#unity-canvas");
+    const loading = document.querySelector("#unity-loading");
+
+    const config = {
+      dataUrl: "./Reflexion.data",
+      frameworkUrl: "./Reflexion.framework.js",
+      codeUrl: "./Reflexion.wasm",
+      companyName: "IvixDesign", // 元のindex.htmlから取得
+      productName: "Reflexxion",   // 元のindex.htmlから取得
+      productVersion: "1.0.2",   // 元のindex.htmlから取得
+    };
+
+    createUnityInstance(canvas, config, (progress) => {
+      loading.textContent = `Loading... ${Math.round(progress * 100)}%`;
+    }).then(() => {
+      loading.remove();
+    }).catch((err) => {
+      loading.textContent = "Failed to load. Open DevTools console.";
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

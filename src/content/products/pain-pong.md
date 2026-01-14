@@ -4,7 +4,7 @@ kind: game
 pubDate: 2026-01-14
 summary: Unityで作成したブラウザで遊べるシンプルなポンゲームです。
 tags: [unity, game]
-banner: ./blog-placeholder-1.jpg
+banner: ./pain-pong-game-screenshot.png
 ---
 
 Unityで作成したブラウザで遊べるシンプルなポンゲームです。

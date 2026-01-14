@@ -1,6 +1,7 @@
 ---
 title: Escape From The Banana Room
 kind: game
+status: public
 pubDate: 2026-01-05
 summary: Unityで作成したブラウザで遊べる脱出ゲームです。
 tags: [unity, game]

@@ -23,6 +23,7 @@ const products = defineCollection({
       kind: z.enum(["game", "tool", "music", "article", "other"]).default("other"),
       pubDate: z.date().optional(),
       summary: z.string().optional(),
+			status: z.enum(["draft", "developing", "public"]).default("draft"),
       tags: z.array(z.string()).default([]),
       banner: image(), // ★これが重要
       url: z.string().url().optional(),

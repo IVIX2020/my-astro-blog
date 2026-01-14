@@ -2,6 +2,7 @@
 title: 2026-W02 創作面が意外と捗った
 slug: "20260112"
 description: 'Obsidian習慣が定着し、創作環境が変動しつつある'
+status: public
 pubDate: Jan 12 2026
 heroImage: ""
 ---

@@ -1,5 +1,5 @@
 ---
-title: 2026-W06 少し停滞感
+title: 2026-W06 Blenderでモデリングに少し親しむ
 slug: "20260209"
 description: 'Blenderのモデリングに少し親しむ'
 status: public

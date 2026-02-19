@@ -7,54 +7,38 @@ pubDate: Feb 19 2026
 heroImage: ""
 ---
 ## とにかく、最近はBlenderとUnityばかり触っている
-
 今週ずっとやっているのはBlenderとUnity、それだけです。最近はとても前向きな気持ちです。というのも、これまで長い間好きで続けてきたことに対して、自分の居場所を見つけられたような感覚があるからです。  
 私は美しいものや、自分のアイデアを形にすること、そして物語が好きです。そして今は、それらの要素をすべて含んだゲームを作ろうとしています。とてもワクワクしていて、どうなるのか楽しみです。
 
 ---
 
 ## 次のゲームのアイデア
-
 伝統的な日本家屋と庭園をテーマにした脱出ゲームです。時間の流れを扱うギミックを取り入れたいと考えています。基本となるコア要素は次の2つです。
-
 1. **円窓（Round window）**  
     別の庭園とつながっていて、異なる時間や世界へ移動できる仕組み。
-    
 2. **花札（Hanafuda）**  
     窓を通るための鍵として機能します。庭園の各所に散らばっており、それを集めることがゲームの基本ループになります。
-    
-
 このアイデアは通勤中にふと思いつきました。ここ数週間ずっと漠然と抱いていた「伝統的な日本のモチーフを使った3Dゲームを作りたい」という願望に、ようやく具体的な形が与えられた感覚です。  
 最初は次の作品としてホラーゲームを考えていましたが、今はむしろ、美しい風景の中で明るく前向きな雰囲気を持ち、人々を励ますような体験にしたいと思っています。
 
 ---
 
 ## BlenderとUnity
-
 ゲーム制作の感覚を取り戻すための第一歩として、BlenderとUnityのチュートリアルから始めました。
 
 ### モデリング（Blender）
-
 日本の夏らしい情景を作ることを意識して、いくつかの小物を制作しました。  
 バス停や神社、木など、特定のシーンを形作ることに焦点を当てました。
-
 - 鳥居
-    
 - 提灯
-    
 - 石灯籠
-    
 - クッション
-    
 - 瓦屋根
-    
-
 Align、Mirror、Bevel、Solidifyといった重要なモディファイアを学び、カーブの扱いも経験しました。
 
 ---
 
 ### Geometry Nodes（Blender）
-
 今週のハイライトと言えるかもしれません。Geometry Nodesを使って、茎と花弁を持つ花や木を作りました。制作したモデルは2つだけですが、基本はかなり理解できた感覚があります。ほとんどのことを自力で再現できそうです。  
 Geometry Nodesは環境を有機的に見せる非常に強力なツールだと思います。ランダム性を取り入れるアプローチは、時には自分のデザイン努力以上に良い結果をもたらします。  
 そのため、理想の景観を形作るための重要なアセットとして、植物、木、石、草、苔などを作るのに使いたいと考えています。さらに、庭の基本的な形状にも応用したいですが、Unityに移行するには技術的な課題が多いとも感じています。
@@ -62,7 +46,6 @@ Geometry Nodesは環境を有機的に見せる非常に強力なツールだと
 ---
 
 ### HDRPでの環境制作（Unity）
-
 霧に包まれた神社の鳥居の環境を作りました。HDRPを扱うのは久しぶりでしたが、思ったよりすぐに感覚を取り戻せました。初めてにしてはかなり良い出来だと思います。  
 この過程で、HDRI Sky、レンズディストーション、テレインのレイヤー素材ペイント、有機的な植物環境、カラ―グレーディングなどの新しい技術も学びました（カラ―グレーディングの設定は少し分かりにくく、名前も直感的ではありませんでした）。  
 自然な環境をUnityで作るコツをつかめた気がします。ただ、HDRPは自分の目的には最適ではないと感じました。よりスタイライズ表現がしやすいURPに移行する可能性が高いです。
@@ -70,13 +53,11 @@ Geometry Nodesは環境を有機的に見せる非常に強力なツールだと
 ---
 
 ### プライベート
-
 久しぶりに昔の友人たちから連絡があり、来週末に出かける予定ができました。とても楽しみです。  
 また、自分の生活や将来について見直そうとも思っています。真剣なテーマで、正直あまり得意ではありませんが、必要なことです。これが自分の人生を前向きに変えるきっかけになればいいと思っています。  
 また、イギリスの田舎の手作り風のケーキを食べました。手作りで、とても美味しかったです。
 
 ## その他気になったこと
-
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:5hvzk55bxjnelww6hdzzfqmq/app.bsky.feed.post/3mefycfwvx22h" data-bluesky-cid="bafyreibvg3awwxpkzpjkh3xapv6gqmjbve3qxth3wjoodx66tjkdrm76yq" data-bluesky-embed-color-mode="system"><p lang="ja">逆にこれまでダメだったんだね。考えたらそりゃ当たり前というか、必然性がなければリスクもあるもんね。<br><br><a href="https://bsky.app/profile/did:plc:5hvzk55bxjnelww6hdzzfqmq/post/3mefycfwvx22h?ref_src=embed">[image or embed]</a></p>&mdash; 1610 紅燈 (<a href="https://bsky.app/profile/did:plc:5hvzk55bxjnelww6hdzzfqmq?ref_src=embed">@1610frms.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:5hvzk55bxjnelww6hdzzfqmq/post/3mefycfwvx22h?ref_src=embed">9 February 2026 at 17:02</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:lagstf7d2efv7t54sqyzv7jh/app.bsky.feed.post/3mefonswyus2s" data-bluesky-cid="bafyreifcz2bqicqom54755enla2ts2yip7kixt4svgjsmoipjddxpe2a6a" data-bluesky-embed-color-mode="system"><p lang="ja">正解かどうかより、単純であることが支持されやすい。思想が選ばれてるというより、思考負荷の低さが選ばれてる感じ。

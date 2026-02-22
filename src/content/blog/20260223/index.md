@@ -1,9 +1,9 @@
 ---
-title: 2026-W07 Blender/Unityを本格稼働
-slug: "20260219"
-description: 'Blender/Unityを本格稼働。次作への構想が固まってくる'
+title: 2026-W08 音空間、URP検討、風で揺れる植物
+slug: "20260223"
+description: 'Blender/Unityの開拓を進める'
 status: public
-pubDate: Feb 19 2026
+pubDate: Feb 23 2026
 heroImage: ""
 ---
 

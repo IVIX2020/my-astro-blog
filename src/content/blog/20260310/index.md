@@ -90,7 +90,7 @@ Houdini Apprenticeを初めてみる。Blender でいうGeometry Nodesをより�
 
 加えて、コードは正しく動かなければ動かないという事実を突きつけることでAIはそれをコンテクストに加えられます</p>&mdash; 貓村ゐき Nekomura Wiki (<a href="https://bsky.app/profile/did:plc:72nunoxaihpero364c4u7mrg?ref_src=embed">@nekomura-koneko.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:72nunoxaihpero364c4u7mrg/post/3mh36tr3bos2j?ref_src=embed">15 March 2026 at 14:16</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
-AIと人間の間には両者が理解できるMediated spaceが必要。
+AIと人間の間には両者が理解できる中間地点が必要。
 
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:w53lkqbynr7up43cnyrld2i3/app.bsky.feed.post/3mh5vkl3wtk2g" data-bluesky-cid="bafyreibety46mgfyoo3eygeom3booohg2cll6vyrdbek47cflfjb7v2uoi" data-bluesky-embed-color-mode="system"><p lang="ja">最近かどうかはわからないのだけれど、Steamのレビューを見ていると、ユーザーの物語に対するストレス耐性がいい加減下がりすぎであると感じることが多くなったなぁ。
 「序盤は胸糞展開が続くので、セリフは全部スキップするといいです」とか、「爽快アクションなのに後半難しい話をしたので減点です」とか、幼稚か、幼稚なのか！？

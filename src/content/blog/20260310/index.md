@@ -21,6 +21,7 @@ Youtube動画「[# プロシージャル技法による背景の自動生成 『
 最終的に目指すのは、敷居や壁、柱などの識別用マテリアルが割り当てられた平面図からモックアップを起こし、さらにモックアップのパーツそれぞれを自由にGeometry Nodesで調整できる、本番用のパーツに置き換えて個別に見た目を作り込めるという一連のシステムの構築である。
 
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:5hvzk55bxjnelww6hdzzfqmq/app.bsky.feed.post/3mhbtqik7722a" data-bluesky-cid="bafyreiecm65qojdgtrnfvr6aqcjnc5ipkumcxdja2fefrv4awspqo4ewlu" data-bluesky-embed-color-mode="system"><p lang="en">Geometry Nodesを使い、マテリアルを指定した平面図から立体（今はただのマテリアル付きのBOX）を起こす。あとは生成した立体各自にBounding Boxを個別に設定し、欄間なら欄間、鴨居・敷居ならそれ専用のGNに渡して、今のBOXを置き換える。そんなことが出来るかは知らんが（大量にextrudeした各立体を個別に識別・調整する方法が謎、出来なければただのモック兼ガイドにしかならないな）。<br><br><a href="https://bsky.app/profile/did:plc:5hvzk55bxjnelww6hdzzfqmq/post/3mhbtqik7722a?ref_src=embed">[image or embed]</a></p>&mdash; 1610 紅燈 (<a href="https://bsky.app/profile/did:plc:5hvzk55bxjnelww6hdzzfqmq?ref_src=embed">@1610frms.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:5hvzk55bxjnelww6hdzzfqmq/post/3mhbtqik7722a?ref_src=embed">18 March 2026 at 05:46</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+
 ### Houdiniにも関心はあるが......
 Houdini Apprenticeを初めてみる。Blender でいうGeometry Nodesをより詳細に作り込めるようにした感じで、画面上でオブジェクトに対して行った触ったあらゆる操作が記録され、手続型に落とし込まれる考え方の潔さは気持ちがいいほど割り切っていて、可能性を感じる。
 ただApprenticeでやる以上は、導入は限定的だ。高い学習コストに見合うだけのリターンとして期待してた**Unityとの連携**が、Apprenticeでは出来ないからだ。

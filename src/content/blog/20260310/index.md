@@ -1,5 +1,5 @@
 ---
-title: 2026-W11 Blender Geometry Nodesは面白い
+title: 2026-W10 Blender Geometry Nodesは面白い
 slug: "20260318"
 description: モックアップをGeometry Nodesで続ける
 status: public

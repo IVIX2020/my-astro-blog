@@ -1,5 +1,5 @@
 ---
-title: 2026-W10 方針転換と物語のタネ
+title: 2026-W11 方針転換と物語のタネ
 slug: "20260309"
 description: AtoZ連作法を中断しモックアップ作成へ　描きたい物語の核を思いついた
 status: public

@@ -1,9 +1,9 @@
 ---
 title: 2026-W14 レコード習慣をはじめる
-slug: "20260401"
-description: Blenderは置き換えに成功、柱などのこぼれ表現も実践
+slug: "20260406"
+description: レコード習慣をはじめた　少しずつ生活の様態が変わってきている
 status: public
-pubDate: Apr 1 2026
+pubDate: Apr 6 2026
 heroImage: ""
 tags: [weekly]
 ---

@@ -5,6 +5,7 @@ description: 'ＡＩに頼らずに頼らずに書く事の効能についてな
 status: public
 pubDate: 'Jan 01 2026'
 heroImage: ''
+tags: [daily]
 ---
 
 久々にブログを書く。それも自力でだ。

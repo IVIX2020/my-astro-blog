@@ -5,6 +5,7 @@ description: 'ゲーム作りたい欲が高まる'
 status: public
 pubDate: Feb 01 2026
 heroImage: ""
+tags: [weekly]
 ---
 ## 風邪をひとつの契機に
 ### 火曜日から風邪でダウン

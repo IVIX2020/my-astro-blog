@@ -5,6 +5,7 @@ description: 訪れたかった場所を訪れて大いに霊感を刺激され�
 status: public
 pubDate: Mar 24 2026
 heroImage: ""
+tags: [weekly]
 ---
 ## BlenderはProceduralを勉強中
 ### かなり様になってきた

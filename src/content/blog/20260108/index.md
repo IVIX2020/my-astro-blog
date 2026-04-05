@@ -5,6 +5,7 @@ description: '創作と、家族との充実した正月休み'
 status: public
 pubDate: Jan 08 2026
 heroImage: ""
+tags: [weekly]
 ---
 ## １、Astroでブログを作成
  - AIに頼らず、自分の思いを発信するシンプルな場所。

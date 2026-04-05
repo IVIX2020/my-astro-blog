@@ -5,6 +5,7 @@ description: 'AtoZ連作法を中心にBlender / Unityの実践 日本美の学�
 status: public
 pubDate: Mar 3 2026
 heroImage: ""
+tags: [weekly]
 ---
 ## Unity / Blender の進捗
 ### ABC連作法

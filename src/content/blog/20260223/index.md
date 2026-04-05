@@ -5,6 +5,7 @@ description: 'Blender/Unityの開拓を進める'
 status: public
 pubDate: Feb 23 2026
 heroImage: ""
+tags: [weekly]
 ---
 
 ## Unity / Blenderの進捗

@@ -5,6 +5,7 @@ description: モックアップをGeometry Nodesで続ける
 status: public
 pubDate: Mar 18 2026
 heroImage: ""
+tags: [weekly]
 ---
 ## Unity / Blender の進捗
 ### 出勤前の時間を使い細々とBlenderを触る

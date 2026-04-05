@@ -5,6 +5,7 @@ description: '新しいことを学んできてよかった'
 status: public
 pubDate: Jan 04 2026
 heroImage: ""
+tags: [daily]
 ---
 2026年1月初頭、このブログを立ち上げた。
 

@@ -5,7 +5,6 @@ description: Blenderは置き換えに成功、柱などのこぼれ表現も実
 status: public
 pubDate: Apr 1 2026
 heroImage: ""
-tags: [weekly]
 ---
 ## Blender
 `My Newyork Diary`という映画を見ていたら、「朝の十五分でもいいから、とにかく毎日書くことが大事だ」というセリフがあった。BlenderにしろUnityにしろ、`毎日何か新しいことする`ことを心がけたい。ちなみに劇中でそれを言ったのはサリンジャーなのですが。

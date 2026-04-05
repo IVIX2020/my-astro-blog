@@ -6,7 +6,6 @@ description: '感想その１'
 status: public
 pubDate: Jan 12 2026
 heroImage: ""
-
 ---
 
 ## 「這樣不好吧」　不誠実で誠実なFattyという人物

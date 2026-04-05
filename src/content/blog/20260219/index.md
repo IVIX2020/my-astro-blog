@@ -5,6 +5,7 @@ description: 'Blender/Unityを本格稼働。次作への構想が固まって�
 status: public
 pubDate: Feb 19 2026
 heroImage: ""
+tags: [weekly]
 ---
 ## とにかく、最近はBlenderとUnityばかり触っている
 今週ずっとやっているのはBlenderとUnity、それだけです。最近はとても前向きな気持ちです。というのも、これまで長い間好きで続けてきたことに対して、自分の居場所を見つけられたような感覚があるからです。  

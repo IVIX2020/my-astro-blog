@@ -43,12 +43,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/20260126/index.md",
-                "mode": "preview",
-                "source": true
+                "file": "src/content/blog/進捗報告/index 1.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "index 1"
             }
           }
         ],
@@ -217,16 +217,21 @@
   },
   "active": "47309e8cec110a56",
   "lastOpenFiles": [
+    "src/content/blog/20260112/index.md",
+    "src/content/blog/20260115/index.md",
+    "src/content/blog/進捗報告/index 1.md",
+    "src/content/blog/20260112/Screenshot 2026-01-12 at 5.32.53.png",
+    "src/content/blog/進捗報告/Screenshot 2026-04-06 at 15.24.37.png",
+    "src/content/blog/20260108/index.md",
+    "src/content/blog/20260104/index.md",
+    "src/content/blog/20260406/index.md",
+    "src/content/blog/20260126/index.md",
+    "src/content/blog/20260406-2/Untitled",
+    "src/content/blog/進捗報告",
     "src/content/blog/20260129/index.md",
     "src/content/blog/20260101/index.md",
-    "src/content/blog/20260104/index.md",
-    "src/content/blog/20260108/index.md",
     "src/content/blog/20260119/index.md",
-    "src/content/blog/20260115/index.md",
-    "src/content/blog/20260112/index.md",
-    "src/content/blog/20260126/index.md",
     "src/content/blog/20260201/index.md",
-    "src/content/blog/20260406/index.md",
     "src/content/blog/20260401/index.md",
     "src/content/blog/20260324/index.md",
     "src/content/blog/20260318/index.md",
@@ -246,8 +251,6 @@
     "src/content/blog/20260324",
     "src/content/blog/20260318",
     "src/content/blog/20260310",
-    "src/content/blog/20260129",
-    "src/content/blog/20260108",
-    "src/content/blog/20260104"
+    "src/content/blog/20260129"
   ]
 }

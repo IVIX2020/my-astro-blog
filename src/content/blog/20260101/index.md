@@ -1,11 +1,11 @@
 ---
-title: '自分の言葉で綴ることの大切さ'
-slug: '20260101'
-description: 'ＡＩに頼らずに頼らずに書く事の効能についてなど'
+title: 自分の言葉で綴ることの大切さ
+slug: "20260101"
+description: ＡＩに頼らずに頼らずに書く事の効能についてなど
 status: public
-pubDate: 'Jan 01 2026'
-heroImage: ''
-tags: [daily]
+pubDate: Jan 01 2026
+heroImage: ""
+directory: other
 ---
 
 久々にブログを書く。それも自力でだ。

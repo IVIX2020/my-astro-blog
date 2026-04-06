@@ -5,7 +5,7 @@ description: 'Blenderのモデリングに少し親しむ'
 status: public
 pubDate: Feb 09 2026
 heroImage: ""
-tags: [weekly]
+directory: weekly
 ---
 ## 週の目標
 ## Blenderでの実践

@@ -13,6 +13,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
+			directory: z.string().optional(),
 		}),
 });
 const products = defineCollection({
@@ -22,7 +23,7 @@ const products = defineCollection({
       title: z.string(),
       kind: z.enum(["game", "tool", "music", "article", "other"]).default("other"),
       pubDate: z.date().optional(),
-      summary: z.string().optional(),
+      description: z.string().optional(),
 			status: z.enum(["draft", "developing", "public"]).default("draft"),
       tags: z.array(z.string()).default([]),
       banner: image(), // ★これが重要

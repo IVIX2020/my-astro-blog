@@ -5,7 +5,7 @@ description: 'しかしBlenderとGeminiで2大発見'
 status: public
 pubDate: Jan 26 2026
 heroImage: ""
-tags: [weekly]
+directory: weekly
 ---
 ### 途中で終わっている感
 多分最初のズッコケは開発していたObsidian Plugin（Kobo Highlight Picker & Inboxer）がなかなか一般にpublishできていないこと。単に審査に時間がかかっているようです。自分なりの知見になればいいや、という思いではあるのですが、とはいえ自分が使うばかりで誰かの役に立てていないというのは、区切りを打つという意味で少しモヤモヤします。

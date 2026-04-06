@@ -1,11 +1,11 @@
 ---
-
 title: 映画鑑賞日記 エドワード・ヤン　"A One And A Two"（ヤンヤン夏の思い出）
 slug: "20260116"
 description: '感想その１'
 status: public
 pubDate: Jan 12 2026
 heroImage: ""
+directory: other
 ---
 
 ## 「這樣不好吧」　不誠実で誠実なFattyという人物

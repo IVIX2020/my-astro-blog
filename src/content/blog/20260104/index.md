@@ -1,12 +1,13 @@
 ---
 title: 新しいツールをBaseに点と点がつながる
 slug: "20260104"
-description: '新しいことを学んできてよかった'
+description: 新しいことを学んできてよかった
 status: public
 pubDate: Jan 04 2026
 heroImage: ""
-tags: [daily]
+directory: other
 ---
+
 2026年1月初頭、このブログを立ち上げた。
 
 フレームワークとして使ったのはAstroという技術。

@@ -5,7 +5,7 @@ description: AtoZ連作法を中断しモックアップ作成へ　描きたい
 status: public
 pubDate: Mar 9 2026
 heroImage: ""
-tags: [weekly]
+directory: weekly
 ---
 ## Unity / Blender の進捗
 ### 平日はUnity / Blenderにほぼ触れないものの...

@@ -1,11 +1,11 @@
 ---
 title: 2026-W01 新年の創作環境整備の日々
 slug: "20260108"
-description: '創作と、家族との充実した正月休み'
+description: 創作と、家族との充実した正月休み
 status: public
 pubDate: Jan 08 2026
 heroImage: ""
-tags: [weekly]
+directory: weekly
 ---
 ## １、Astroでブログを作成
  - AIに頼らず、自分の思いを発信するシンプルな場所。

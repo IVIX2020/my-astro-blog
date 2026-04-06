@@ -5,7 +5,7 @@ description: レコード習慣をはじめた　少しずつ生活の様態が�
 status: public
 pubDate: Apr 6 2026
 heroImage: ""
-tags: [weekly]
+directory: weekly
 ---
 ## Blender
 前回、

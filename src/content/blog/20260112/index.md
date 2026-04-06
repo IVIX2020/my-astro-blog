@@ -5,7 +5,7 @@ description: 'Obsidian習慣が定着し、創作環境が変動しつつある'
 status: public
 pubDate: Jan 12 2026
 heroImage: ""
-tags: [weekly]
+directory: weekly
 ---
 ## Obsidian 関係
 ### 公式に申請中の Community Plugin は依然承認待ち

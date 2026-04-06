@@ -7,9 +7,21 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+// Fetch all posts and sort them by date
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0),
 );
+
+const weeklyPosts = [];
+const otherPosts = [];
+
+for (const post of allPosts) {
+	if (post.data.directory === 'weekly') {
+		weeklyPosts.push(post);
+	} else {
+		otherPosts.push(post);
+	}
+}
 ---
 
 <!doctype html>
@@ -35,7 +47,7 @@ const posts = (await getCollection('blog')).sort(
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
-			ul li:first-child {
+			ul li:first-child { /* This applies to the first item in *each* ul now */
 				width: 100%;
 				margin-bottom: 1rem;
 				text-align: center;
@@ -62,6 +74,10 @@ const posts = (await getCollection('blog')).sort(
 				margin: 0;
 				color: rgb(var(--gray));
 			}
+			.description {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
 			ul li a:hover h4,
 			ul li a:hover .date {
 				color: rgb(var(--accent));
@@ -77,7 +93,7 @@ const posts = (await getCollection('blog')).sort(
 					width: 100%;
 					text-align: center;
 				}
-				ul li:first-child {
+				ul li:first-child { /* This applies to the first item in *each* ul now */
 					margin-bottom: 0;
 				}
 				ul li:first-child .title {
@@ -89,22 +105,51 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li  style="text-align: left;">
-								<a href={`/my-astro-blog/blog/${post.id}/`}>
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			{weeklyPosts.length > 0 && (
+				<section>
+					<h1>週次報告</h1>
+					<ul>
+						{
+							weeklyPosts.map((post) => (
+								<li style="text-align: left;">
+									{/* Using post.id for the href, assuming it's the slug or a unique identifier */}
+									<a href={`/my-astro-blog/blog/${post.id}/`}>
+										<h4 class="title">{post.data.title}</h4>
+
+										<p class="description">
+											{post.data.description}
+										</p>
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</section>
+			)}
+			{otherPosts.length > 0 && (
+				<section>
+					<h1>その他の記事</h1>
+					<ul>
+						{
+							otherPosts.map((post) => (
+								<li style="text-align: left;">
+									{/* Using post.id for the href, assuming it's the slug or a unique identifier */}
+									<a href={`/my-astro-blog/blog/${post.id}/`}>
+										<h4 class="title">{post.data.title}</h4>
+										<p class="description">{post.data.description}</p>
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</section>
+			)}
 		</main>
 		<Footer />
 	</body>

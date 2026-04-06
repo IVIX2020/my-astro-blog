@@ -5,7 +5,7 @@ description: 'ゲームを作りたいけど、何を作りたいのかが言語
 status: public
 pubDate: Jan 29 2026
 heroImage: ""
-tags: [daily]
+directory: other
 ---
 ## 風邪ひいた
 機能から体調不良。咳。インフルでもコロナでもなかった。今日も暇をもらい、休養。体調が不良なのもあるが、PCに向き合っても何かする気にならない。何をすればいいか思いつかない。

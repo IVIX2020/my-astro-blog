@@ -43,9 +43,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/進捗報告/index.md",
+                "file": "src/content/blog/20260415/index.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "index"
@@ -215,16 +215,19 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "572c03a20b5034ed",
+  "active": "47309e8cec110a56",
   "lastOpenFiles": [
+    "src/content/blog/20260406/index.md",
+    "src/content/blog/20260415/index.md",
+    "src/content/blog/20260415",
+    "2026-04-07.md",
+    "src/content/blog/進捗報告/index.md",
     "src/content/blog/20260112/index.md",
     "src/content/blog/20260115/index.md",
-    "src/content/blog/進捗報告/index.md",
     "src/content/blog/20260112/Screenshot 2026-01-12 at 5.32.53.png",
     "src/content/blog/進捗報告/image-01.png",
     "src/content/blog/20260108/index.md",
     "src/content/blog/20260104/index.md",
-    "src/content/blog/20260406/index.md",
     "src/content/blog/20260126/index.md",
     "src/content/blog/20260406-2/Untitled",
     "src/content/blog/進捗報告",
@@ -250,7 +253,6 @@
     "src/content/blog/20260401",
     "src/content/blog/20260324",
     "src/content/blog/20260318",
-    "src/content/blog/20260310",
-    "src/content/blog/20260129"
+    "src/content/blog/20260310"
   ]
 }

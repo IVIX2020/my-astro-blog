@@ -1,7 +1,7 @@
 ---
-title: 2026-W15 
+title: 2026-W15 かもめ食堂を久々に鑑て感化される
 slug: "20260415"
-description: 
+description: インプットが充實した週だった
 status: public
 pubDate: Apr 6 2026
 heroImage: ""

@@ -11,7 +11,7 @@ directory: quarterly
 ## やること
 次のことを目標にしたい。
 > [!note] 次の四半期に取り組みたいこと
->  - **放置状態の1610's blog **:: 改名、Zettelkastenを公開するベースとして活用
+>  - **放置状態の1610's blog** :: 改名、Zettelkastenを公開するベースとして活用
 >  - **自作Obsidian Plugin** :: `Obsidian KOBO Highlight Picker & Inboxer`審査再申請
 
 ## Obsidian x Astro Blog x Bluesky のspaceを開拓
@@ -19,7 +19,7 @@ directory: quarterly
 前段階として、ずっとObsidianを知識のベース（基地）としつつ、「`AI(Gemini)に自動で文章を書かせる`」といふ試みがあった。私はそれを「１か月だけ毎日續ける」といふ條件で、自分のnoteに投稿してゐたのだった。
 ある日、「**自分の頭で考へながら、自分の言葉で記したい**」と思ふやうになった。
 
-[[自分の言葉で綴ることの大切さ]]
+[[https://ivix2020.github.io/my-astro-blog/blog/20260101/|自分の言葉で綴ることの大切さ]]
 
 きっかけとなった`norimakiguruguru`さんのブログ記事[^1]の言葉を借りるならば、「`過剩な情報を吸収不足のまま、ノートに排泄してゐる`」感覺があったからだ。
 
@@ -28,7 +28,7 @@ directory: quarterly
 
 ブログ構築に於てFront-end Frameworkに使ったのは`Astro`である。Serverとしては`GitHub Pages`を使ってゐる。Editorは言ふまでもなく`Obsidian`である。
 
-過去の自作ゲームの公開や[[src/content/blog/20260112/index#OGPを調整|OGPを追加]]するなどし、少しずつ充實させていった。
+過去の自作ゲームの公開やOGPを追加するなどし、少しずつ充實させていった。
 
 #### 當初考へてゐたPlatform の使ひ分けと現状
 當初：次のように整理したいと思ってゐた。

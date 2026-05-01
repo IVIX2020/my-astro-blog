@@ -3,7 +3,7 @@ title: 2026-W17 ドタバタの一週間、3D創作からは離れる
 slug: "20260502"
 description: 仕事が忙しく3Dの世界からはあえて離れる。プライベートではシチリア料理を樂しんだ。
 status: public
-pubDate: Apr 24 2026
+pubDate: May 1 2026
 heroImage: ""
 directory: weekly
 ---

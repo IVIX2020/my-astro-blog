@@ -23,7 +23,14 @@ try {
         }
 
         // Parse markdown to HTML
-        const parsedHtml = marked.parse(contentWithoutFrontmatter);
+        let parsedHtml = marked.parse(contentWithoutFrontmatter) as string;
+
+        // Handle Obsidian-style highlights ==text==
+        parsedHtml = parsedHtml.replace(/==([\s\S]+?)==/g, '<mark>$1</mark>');
+
+        // Handle Obsidian-style inline footnotes ^[text]
+        parsedHtml = parsedHtml.replace(/\^\[([\s\S]+?)\]/g, '<small class="footnote" title="$1">[$1]</small>');
+
         // Process links to include BASE_URL if they are internal
         htmlContent = parsedHtml.replace(/href="(?!https?:\/\/)(?!\/\/)([^"]*)"/g, (match, p1) => {
             // Check if the link starts with / and not // (protocol-relative)

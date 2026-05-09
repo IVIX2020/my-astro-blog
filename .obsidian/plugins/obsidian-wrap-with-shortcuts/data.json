@@ -1,0 +1,22 @@
+{
+  "wrapperTags": [
+    {
+      "id": "w1778361801886",
+      "name": "Footnote-in-callout",
+      "startTag": "**",
+      "endTag": "**^[]"
+    },
+    {
+      "id": "w1778361217108",
+      "name": "Ruby",
+      "startTag": "<ruby>",
+      "endTag": "<rt></rt></ruby>"
+    },
+    {
+      "id": "underline",
+      "name": "Underline",
+      "startTag": "<u>",
+      "endTag": "</u>"
+    }
+  ]
+}

@@ -1,6 +1,12 @@
 {
   "wrapperTags": [
     {
+      "id": "w1778364587354",
+      "name": "Callout-study",
+      "startTag": "> [!study]\n>",
+      "endTag": ">"
+    },
+    {
       "id": "w1778361801886",
       "name": "Footnote-in-callout",
       "startTag": "**",

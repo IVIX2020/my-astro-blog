@@ -110,8 +110,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -233,7 +232,7 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "9d7fdc52e0a7c05c",
+  "active": "572c03a20b5034ed",
   "lastOpenFiles": [
     "dist/sitemap-index.xml",
     "dist/sitemap-0.xml",

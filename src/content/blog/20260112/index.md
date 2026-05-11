@@ -60,8 +60,9 @@ Obsidian CEOはどのようなノートをとっているか？
 ### OGPを調整
 私の個人的なWebサイト２つについて、OGPの見え方を工夫した。
 
-**1610 Web**
-![1610 Web](./Screenshot%202026-01-12%20at%205.32.53.png)
+**1610 Web**> [!study]
+>
+![1610 Web](./Screenshot%202026-01-12%20at%205.32.53.png)>
 
 **1610 garden**
 ![1610 garden](./Screenshot%202026-01-12%20at%205.35.22.png)

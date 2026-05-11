@@ -9,10 +9,11 @@
     "flashcardDeckOrder": "PrevDeckComplete_Sequential",
     "convertClozePatternsToInputs": false,
     "convertHighlightsToClozes": true,
-    "convertBoldTextToClozes": false,
+    "convertBoldTextToClozes": true,
     "convertCurlyBracketsToClozes": false,
     "clozePatterns": [
-      "==[123;;]answer[;;hint]=="
+      "==[123;;]answer[;;hint]==",
+      "**[123;;]answer[;;hint]**"
     ],
     "singleLineCardSeparator": "::",
     "singleLineReversedCardSeparator": ":::",

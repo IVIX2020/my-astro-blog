@@ -3,7 +3,7 @@ title: 2026-W20 創作的停滞の代わりに得たものは
 slug: "20260525"
 description: 台湾華語の読書がわりと捗る
 status: public
-pubDate: May 2152026
+pubDate: May 25 2026
 heroImage: ""
 directory: weekly
 tags:

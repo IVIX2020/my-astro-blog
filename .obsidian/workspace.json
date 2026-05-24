@@ -212,16 +212,18 @@
   },
   "active": "5dae74feade8b88a",
   "lastOpenFiles": [
-    "src/content/blog/20260521/index.md",
+    "src/content/blog/20260525/Pasted image 20260525071746.png",
+    "src/content/blog/20260209/index.md",
     "src/content/blog/20260525/index.md",
-    "Pasted image 20260525074401.png",
-    "Pasted image 20260525074059.png",
     "Pasted image 20260525073900.png",
-    "Pasted image 20260525072349.png",
-    "Pasted image 20260525072121.png",
-    "Pasted image 20260525072034.png",
-    "Pasted image 20260525071841.png",
-    "Pasted image 20260525071746.png",
+    "src/content/blog/20260525/Pasted image 20260525074059.png",
+    "src/content/blog/20260525/Pasted image 20260525074401.png",
+    "src/content/blog/20260525/Pasted image 20260525072349.png",
+    "src/content/blog/20260525/Pasted image 20260525072121.png",
+    "src/content/blog/20260525/Pasted image 20260525072034.png",
+    "src/content/blog/20260525/Pasted image 20260525071841.png",
+    "src/content/blog/20260201/index.md",
+    "src/content/blog/20260521/index.md",
     "[[src/content/blog/20260521/index]].md",
     "[[src/content/blog/20260521/index|index]].md",
     "[[src/content/blog/20260521",
@@ -254,8 +256,6 @@
     "node_modules/mdast-util-footnote/node_modules/longest-streak/readme.md",
     "node_modules/remark-mark-plus/README.md",
     "node_modules/mdast-util-footnote/node_modules/parse-entities/readme.md",
-    "node_modules/mdast-util-footnote/node_modules/is-hexadecimal/readme.md",
-    "node_modules/micromark-extension-footnote/node_modules/is-decimal/readme.md",
-    "node_modules/micromark-extension-footnote/node_modules/is-alphanumerical/readme.md"
+    "node_modules/mdast-util-footnote/node_modules/is-hexadecimal/readme.md"
   ]
 }

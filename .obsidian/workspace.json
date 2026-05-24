@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/20260521/index.md",
+                "file": "src/content/blog/20260525/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -30,26 +30,6 @@
                 "file": "src/content/blog/20260112/index.md",
                 "mode": "source",
                 "source": false
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            }
-          }
-        ]
-      },
-      {
-        "id": "44856b67dae55659",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "47309e8cec110a56",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/blog/20260416/index.md",
-                "mode": "source",
-                "source": true
               },
               "icon": "lucide-file",
               "title": "index"
@@ -232,8 +212,24 @@
   },
   "active": "5dae74feade8b88a",
   "lastOpenFiles": [
-    "src/content/blog/20260512/index.md",
+    "Pasted image 20260525074401.png",
+    "Pasted image 20260525074059.png",
+    "Pasted image 20260525073900.png",
+    "Pasted image 20260525072349.png",
+    "Pasted image 20260525072121.png",
+    "Pasted image 20260525072034.png",
+    "Pasted image 20260525071841.png",
+    "Pasted image 20260525071746.png",
     "src/content/blog/20260521/index.md",
+    "src/content/blog/20260525/index.md",
+    "[[src/content/blog/20260521/index]].md",
+    "[[src/content/blog/20260521/index|index]].md",
+    "[[src/content/blog/20260521",
+    "[[src/content/blog",
+    "[[src/content",
+    "[[src",
+    "src/content/blog/20260525",
+    "src/content/blog/20260512/index.md",
     "src/content/blog/20260521/image-01.png",
     "src/content/blog/20260521",
     "src/content/blog/20260502/index.md",
@@ -245,19 +241,7 @@
     "dist/sitemap-index.xml",
     "dist/sitemap-0.xml",
     "dist/_astro/pain-pong-game-screenshot.DIi0gKV7_KUI5y.webp",
-    "dist/_astro/image-01.DLb09wMG_ZRSLCd.webp",
-    "dist/_astro/pain-pong-game-screenshot.DIi0gKV7_Z2cz5mx.webp",
-    "dist/_astro/Screenshot2026-02-09at15.49.17.CANzP01h_2fv2fj.webp",
-    "dist/_astro/pain-pong-game-screenshot.DIi0gKV7_1nMI65.webp",
-    "dist/_astro/Screenshot2026-02-09at15.49.41.bd9wQq32_Z2gYAmz.webp",
-    "dist/_astro/gpr-banner.1WQRLJGH_ZXjyA4.webp",
-    "dist/_astro/pain-pong-game-screenshot.DIi0gKV7_ZgNqjw.webp",
     "dist/index.html",
-    "dist/rss.xml",
-    "dist/products/pixelzone/index.html",
-    "dist/products/pain-pong/index.html",
-    "dist/products/language-sak/index.html",
-    "dist/products/gpr/index.html",
     "dist/pain-pong/README.md",
     "node_modules/remark-obsidian-footnotes/README.md",
     "node_modules/unist-util-find-all-after/readme.md",
@@ -273,9 +257,6 @@
     "node_modules/mdast-util-footnote/node_modules/parse-entities/readme.md",
     "node_modules/mdast-util-footnote/node_modules/is-hexadecimal/readme.md",
     "node_modules/micromark-extension-footnote/node_modules/is-decimal/readme.md",
-    "node_modules/micromark-extension-footnote/node_modules/is-alphanumerical/readme.md",
-    "node_modules/micromark-extension-footnote/node_modules/character-entities-legacy/readme.md",
-    "node_modules/mdast-util-footnote/node_modules/is-decimal/readme.md",
-    "node_modules/mdast-util-footnote/node_modules/mdast-util-to-string/readme.md"
+    "node_modules/micromark-extension-footnote/node_modules/is-alphanumerical/readme.md"
   ]
 }

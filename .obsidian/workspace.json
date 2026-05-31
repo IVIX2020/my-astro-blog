@@ -29,7 +29,7 @@
               "state": {
                 "file": "src/content/blog/20260601/index.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "index"
@@ -213,9 +213,10 @@
   },
   "active": "68727e5ab9ff860c",
   "lastOpenFiles": [
+    "src/content/blog/20260502/index.md",
+    "src/content/blog/20260601/index.md",
     "src/content/blog/20260525/index.md",
     "src/content/blog/20260601/20260525071746.png",
-    "src/content/blog/20260601/index.md",
     "src/content/blog/20260601/20260525074401.png",
     "src/content/blog/20260601/20260525074059.png",
     "src/content/blog/20260601/20260525072349.png",
@@ -239,7 +240,6 @@
     "src/content/blog/20260525",
     "src/content/blog/20260512/index.md",
     "src/content/blog/20260521",
-    "src/content/blog/20260502/index.md",
     "src/content/blog/20260508-1/index.md",
     "src/content/blog/20260108/index.md",
     "src/content/blog/20260512",

@@ -3,7 +3,7 @@ title: 2026-W21 一年の半分にしてサンドボックスシステムを作�
 slug: "20260601"
 description: 再び台湾華語にのめり込んでいる
 status: public
-pubDate: June 1 2026
+pubDate: 2026-06-01
 heroImage: ""
 directory: weekly
 tags:

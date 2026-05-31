@@ -80,7 +80,6 @@ tags:
 こういう系って好きなんだけど、ボトルで家に置きたいとならないかも。ずっと飲んでると飲み飽きするんだろうか？　というか合わせようと思うと料理を選びすぎるから、減らないのかも。
 
 # Domaine Ribiera “Les Canilles”
-![wine|300](src/content/blog/20260525/20260525074059.png)
 - cuvée：Les Canilles
 - 類型：白酒
 - 類型補充：自然派白酒 / natual wine 系

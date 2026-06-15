@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/20260615/index.md",
+                "file": "src/content/blog/20260616/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -189,14 +189,23 @@
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
             }
+          },
+          {
+            "id": "b05cc7d9d8e37a27",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,15 +217,18 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "terminal:Open terminal": false,
-      "obsidian-spaced-repetition:Review flashcards": false
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "68727e5ab9ff860c",
   "lastOpenFiles": [
+    "src/content/blog/20260615/index.md",
+    "src/content/blog/20260616/index.md",
+    "src/content/blog/20260616",
     "src/content/blog/20260614/index.md",
     "src/content/blog/20260525/index.md",
     "src/content/blog/20260614",
-    "src/content/blog/20260615/index.md",
     "src/content/blog/20260615",
     "src/content/blog/20260525/20260525074059.png",
     "src/content/blog/20260601/index.md",
@@ -246,7 +258,6 @@
     "src/content/blog/20260521",
     "src/content/blog/20260508-1/index.md",
     "src/content/blog/20260108/index.md",
-    "src/content/blog/20260512",
     "dist/pain-pong/README.md",
     "node_modules/remark-obsidian-footnotes/README.md",
     "node_modules/unist-util-find-all-after/readme.md",
@@ -257,7 +268,6 @@
     "node_modules/mdast-util-footnote/node_modules/micromark/readme.md",
     "node_modules/micromark-extension-footnote/node_modules/micromark/readme.md",
     "node_modules/mdast-util-footnote/node_modules/mdast-util-to-markdown/readme.md",
-    "node_modules/mdast-util-footnote/node_modules/longest-streak/readme.md",
-    "node_modules/remark-mark-plus/README.md"
+    "node_modules/mdast-util-footnote/node_modules/longest-streak/readme.md"
   ]
 }

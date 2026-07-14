@@ -1,7 +1,7 @@
 ---
-title: 2026-W27 仕事とメンタル
+title: 2026-W27 紙と滝
 slug: "20260715"
-description: 職場で改めて人生を考える
+description: アナログな時間の価値を見直す
 status: public
 pubDate: 2026-07-15
 heroImage: ""

@@ -1,7 +1,7 @@
 ---
-title: 2026-W28
+title: 2026-W28 多忙だからこそ趣味に打ち込む
 slug: "20260718"
-description:
+description: 多忙すぎて記憶が飛んでるけど
 status: public
 pubDate: 2026-07-18
 heroImage: ""

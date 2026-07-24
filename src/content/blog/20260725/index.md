@@ -1,7 +1,7 @@
 ---
-title: 2026-W29 多忙だからこそ趣味に打ち込む
+title: 2026-W29 もっとダサく見苦しくいきたい
 slug: "20260725"
-description: 多忙すぎて記憶が飛んでるけど
+description: あえて書き散らす
 status: public
 pubDate: 2026-07-25
 heroImage: ""

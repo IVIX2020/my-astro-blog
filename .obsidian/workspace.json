@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/20260718/index.md",
+                "file": "src/content/blog/20260725/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -208,8 +208,10 @@
   },
   "active": "68727e5ab9ff860c",
   "lastOpenFiles": [
-    "src/content/blog/20260715/index.md",
     "src/content/blog/20260718/index.md",
+    "src/content/blog/20260725/index.md",
+    "src/content/blog/20260725",
+    "src/content/blog/20260715/index.md",
     "src/content/blog/20260718",
     "src/content/blog/20260712/index.md",
     "src/content/blog/20260715",
@@ -244,7 +246,6 @@
     "src/content/blog/20260112/index.md",
     "src/content/blog/20260201/index.md",
     "src/content/blog/20260521/index.md",
-    "[[src/content/blog/20260521",
     "src/content/blog/20260512/index.md",
     "src/content/blog/20260508-1/index.md",
     "src/content/blog/20260108/index.md",
@@ -252,7 +253,6 @@
     "node_modules/remark-obsidian-footnotes/README.md",
     "node_modules/unist-util-find-all-after/readme.md",
     "node_modules/remark-flexible-markers/README.md",
-    "node_modules/unist-util-find-between/readme.md",
-    "node_modules/unist-util-find-all-before/readme.md"
+    "node_modules/unist-util-find-between/readme.md"
   ]
 }

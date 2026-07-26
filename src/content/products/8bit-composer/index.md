@@ -1,5 +1,5 @@
 ---
-title: 8bit-adv
+title: 8bit-composer
 kind: tool
 status: public
 pubDate: 2026-07-26

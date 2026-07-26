@@ -5,7 +5,7 @@ status: public
 pubDate: 2026-07-26
 summary: ファミコン風の４トラックの音源でメロディを片手でサクッとかけるアプリ(試作)
 tags: [obsidian, game]
-banner: ./8bit-adv.png
+banner: ./8bit-composer.png
 ---
 
 ファミコン風の４トラックの音源でメロディを片手でサクッと作曲したくて作りました。

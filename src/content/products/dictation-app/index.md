@@ -1,13 +1,13 @@
 ---
-title: 8bit-adv
+title: dictation-app
 kind: tool
 status: public
 pubDate: 2026-07-26
-summary: Obsidianファイルを読み込んでレトロなADVゲーム風にプレイ(試作)
-tags: [obsidian, game]
-banner: ./8bit-adv.png
+summary: whisperで音声化したファイルをgithubで共有し学習(完全自分用)
+tags: [whisper, language,  tool]
+banner: ./dictation-app.png
 ---
 
-Obsidianで記述したファイル群を読み込み、アドベンチャーゲーム風にブラウザで遊べるツールです。
+whisperで音声化したファイルをgithubで共有し、通勤電車でも片手でディクテーション学習できちゃうツールです。
 
-<a href="https://ivix2020.github.io/visual-novel-sandbox/">▶ ツールのページへ</a>
+<del><a href="">▶ ツールのページへ</a></del><p>非公開</p>

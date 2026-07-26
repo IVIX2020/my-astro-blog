@@ -1,13 +1,13 @@
 ---
-title: 8bit-adv
+title: bd-plotter
 kind: tool
 status: public
 pubDate: 2026-07-26
-summary: Obsidianファイルを読み込んでレトロなADVゲーム風にプレイ(試作)
+summary: バンド・デシネのコマ割りを検討しながら物語を書くためのエディタです(試作)
 tags: [obsidian, game]
-banner: ./8bit-adv.png
+banner: ./bd-plotter.png
 ---
 
-Obsidianで記述したファイル群を読み込み、アドベンチャーゲーム風にブラウザで遊べるツールです。
+バンド・デシネのコマ割りを検討しながら物語を書くためのエディタです。
 
-<a href="https://ivix2020.github.io/visual-novel-sandbox/">▶ ツールのページへ</a>
+<a href="https://ivix2020.github.io/bd-plotter/">▶ ツールのページへ</a>

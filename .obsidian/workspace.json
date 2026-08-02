@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/20260725/index.md",
+                "file": "src/content/blog/20260803/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -206,10 +206,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "68727e5ab9ff860c",
+  "active": "572c03a20b5034ed",
   "lastOpenFiles": [
-    "src/content/blog/20260718/index.md",
     "src/content/blog/20260725/index.md",
+    "src/content/blog/20260803/index.md",
+    "src/content/blog/20260803",
+    "src/content/blog/20260718/index.md",
     "src/content/blog/20260725",
     "src/content/blog/20260715/index.md",
     "src/content/blog/20260718",
@@ -239,7 +241,6 @@
     "src/content/blog/20260601/20260525072121.png",
     "src/content/blog/20260601/20260525072034.png",
     "src/content/blog/20260601/20260525071841.png",
-    "src/content/blog/20260601",
     "Pasted image 20260525113242.png",
     "src/content/blog/20260525/20260525074401.png",
     "src/content/blog/20260209/index.md",
@@ -252,7 +253,6 @@
     "dist/pain-pong/README.md",
     "node_modules/remark-obsidian-footnotes/README.md",
     "node_modules/unist-util-find-all-after/readme.md",
-    "node_modules/remark-flexible-markers/README.md",
-    "node_modules/unist-util-find-between/readme.md"
+    "node_modules/remark-flexible-markers/README.md"
   ]
 }

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/blog/20260803/index.md",
+                "file": "src/content/blog/20260810/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -206,31 +208,32 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "572c03a20b5034ed",
+  "active": "68727e5ab9ff860c",
   "lastOpenFiles": [
-    "src/content/blog/20260725/index.md",
     "src/content/blog/20260803/index.md",
-    "src/content/blog/20260803",
+    "src/content/blog/20260810/index.md",
+    "src/content/blog/20260725/index.md",
+    "src/content/blog/20260810",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/検索での見え方.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/平均読み込み時間のチャート.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/国.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/ページ.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/フィルタ.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/デバイス.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03/クエリ.csv",
+    "gsc-data/https___ivix2020.github.io_my-astro-blog_-Performance-on-Search-2026-08-03",
+    "gsc-data/検索での見え方.csv",
     "src/content/blog/20260718/index.md",
-    "src/content/blog/20260725",
     "src/content/blog/20260715/index.md",
-    "src/content/blog/20260718",
     "src/content/blog/20260712/index.md",
-    "src/content/blog/20260715",
     "[[src/content/blog/20260521/index|index]].md",
     "[[src/content/blog/20260521/index]].md",
     "src/content/blog/20260711/index.md",
-    "src/content/blog/20260712",
     "src/content/blog/20260627/index.md",
-    "src/content/blog/20260711",
     "src/content/blog/20260615/index.md",
     "src/content/blog/20260616/index.md",
-    "src/content/blog/20260627",
     "src/content/blog/20260614/index.md",
-    "src/content/blog/20260616",
     "src/content/blog/20260525/index.md",
-    "src/content/blog/20260614",
-    "src/content/blog/20260615",
     "src/content/blog/20260525/20260525074059.png",
     "src/content/blog/20260601/index.md",
     "src/content/blog/20260502/index.md",
@@ -252,7 +255,6 @@
     "src/content/blog/20260108/index.md",
     "dist/pain-pong/README.md",
     "node_modules/remark-obsidian-footnotes/README.md",
-    "node_modules/unist-util-find-all-after/readme.md",
-    "node_modules/remark-flexible-markers/README.md"
+    "node_modules/unist-util-find-all-after/readme.md"
   ]
 }

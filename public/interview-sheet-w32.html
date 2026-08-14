@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026-W32 週報深層インタビューシート</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --accent-light: rgba(56, 189, 248, 0.12);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #10b981;
+      --radius: 12px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      padding: 2rem 1rem 6rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Sticky Progress & Actions Bar */
+    .action-bar {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      background: rgba(30, 41, 59, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .progress-wrap {
+      flex: 1;
+    }
+
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .progress-bar-bg {
+      background: #334155;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background: var(--accent);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f172a;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: #334155;
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: #475569;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+    }
+    .btn-outline:hover {
+      color: var(--text);
+      border-color: #64748b;
+    }
+
+    /* Section & Question Cards */
+    .section-block {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-number {
+      background: var(--accent);
+      color: #0f172a;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .question-card:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .q-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .q-tag {
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .q-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .q-intent {
+      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--accent);
+      padding: 0.6rem 0.85rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 1rem;
+      color: #cbd5e1;
+    }
+
+    .q-intent strong {
+      color: var(--accent);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.85rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea::placeholder {
+      color: var(--text-dim);
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--success);
+      color: #0f172a;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 999;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Modal for Markdown Preview */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 1000;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 760px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .modal-body {
+      padding: 1.25rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-body pre {
+      background: #0f172a;
+      padding: 1rem;
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .modal-footer {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      .action-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-group {
+        justify-content: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge">2026-W32 (8/3〜8/9)</span>
+      <h1>週報 深層インタビューシート</h1>
+      <p class="subtitle">回答を入力すると自動保存されます。完了後はワンクリックでMarkdown形式として出力・コピーできます。</p>
+    </header>
+
+    <!-- Action & Progress Bar -->
+    <div class="action-bar">
+      <div class="progress-wrap">
+        <div class="progress-text">
+          <span>回答進捗</span>
+          <span id="progress-count">0 / 12 問完了</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn-outline" onclick="openPreview()">プレビュー</button>
+        <button type="button" class="btn-primary" onclick="copyMarkdown()">Markdownをコピー</button>
+        <button type="button" class="btn-secondary" onclick="downloadMarkdown()">.md 保存</button>
+      </div>
+    </div>
+
+    <!-- Form Content -->
+    <form id="interview-form">
+
+      <!-- SECTION 1 -->
+      <div class="section-block">
+        <div class="section-header">
+          <div class="section-number">1</div>
+          <h2 class="section-title">家島の海と「夏ボラ」現地取材の深掘り</h2>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q1. 児童センター取材（8/4）と離島・家島（8/9）のリアルな空気感</span>
+            <span class="q-tag">エピソード</span>
+          </div>
+          <p class="q-desc">8/4は児童センターでテレビ局の取材対応に一日追われ、週末は家島諸島（坊勢島・西島）へ渡りました。テレビクルーの様子や、生徒・団体の印象的な表情ややり取りはありましたか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> テレビの「演出された枠組み」と、島での「手加減のない自然・現場」のギャップがあれば、エッセイの対比として非常に面白くなります。
+          </div>
+          <textarea name="q1_1" placeholder="例：テレビカメラの前で緊張していた生徒が、島に着いた途端に野生を取り戻した… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q2. 生徒たちと一緒に海で泳いだ瞬間の「五感」と感情</span>
+            <span class="q-tag">身体感覚</span>
+          </div>
+          <p class="q-desc">炎天下での荷物運びや塩分補給対応のあと、生徒と一緒に海に入ったとありました。水温、日差し、波の揺れなど、その瞬間に身体と心で感じたことを具体的に教えてください。</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 「大人の管理業務」から一瞬で「一人の生身の人間」に戻った感覚や、前週の「散歩」の思索（自然と孤独、移動の物語）とどう繋がったか。
+          </div>
+          <textarea name="q2_1" placeholder="例：海水が予想以上に冷たくて一瞬で思考がクリアになった。引率者という肩書きを忘れて波に浮かんでいた… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q3. 海洋少年団・カヌー体験で気になった人や言葉</span>
+            <span class="q-tag">人物・ディテール</span>
+          </div>
+          <p class="q-desc">手帳メモにあった「手旗信号・ロープワーク」「昔少年団にいて大学を経て戻ってきた指導員」「カヌーの楽しさを伝える生徒」など、記事に書き残したい人物のディテールはありますか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 伝統や世代の継承、あるいは「自分の時間を誰かのために使うボランティア」に対する、あなたの個人的な視線。
+          </div>
+          <textarea name="q3_1" placeholder="例：昔お世話になったからと仕事を休んで団長を引き継いだ元少年の話が印象的だった… など"></textarea>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="section-block">
+        <div class="section-header">
+          <div class="section-number">2</div>
+          <h2 class="section-title">真夜中の10時間画面凝視と「肉体の復讐」</h2>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q4. 半休の午後から「エラー沼で5時間」に至る転落のプロセス</span>
+            <span class="q-tag">心理的経緯</span>
+          </div>
+          <p class="q-desc">8/6は午前で仕事を終えて半休を取り、優雅に過ごすはずでした。そこから妻の帰りが遅い夜にPCを開き、どの瞬間にブレーキが外れて5時間もエラーログと格闘してしまったのでしょうか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 「あと一個のエラーを直せば動く」というプログラマー特有のギャンブル性や、没頭の甘美さと狂気。
+          </div>
+          <textarea name="q4_1" placeholder="例：Antigravityのエラーが消えたと思ったら次はComfyUIのVRAMエラーが出て、意地になって引っ込みがつかなくなった… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q5. 翌朝の絶望感と「肉体は思想の証明書」のフラッシュバック</span>
+            <span class="q-tag">自己皮肉</span>
+          </div>
+          <p class="q-desc">10時間画面を見つめた翌朝、身体が重く「猛省」されたとのこと。前週に三島由紀夫の「肉体は思想の証明書だ」と書いた自分へのツッコミや、その時感じた無力感・おかしみは？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 読者が一番共感し、笑えるポイントです。「几帳面さを笑う人間が一番几帳面な場所に籠もる」に続く自嘲のスパイス。
+          </div>
+          <textarea name="q5_1" placeholder="例：階段を登るだけで息が上がり、『思想の証明書どころか画面中毒の診断書だな』と自分に呆れた… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q6. 「今夜はアナログに集中する」と誓って実際にやったこと</span>
+            <span class="q-tag">リカバリー</span>
+          </div>
+          <p class="q-desc">反省メモのあと、実際にデジタルを断ってアナログ（紙の手帳、読書、ストレッチ、散歩など）な時間に切り替えられましたか？その後の身体や気分の変化は？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 「紙と質感を大事にする」という思索への着地。
+          </div>
+          <textarea name="q6_1" placeholder="例：万年筆で手帳にガシガシ文字を書いたら落ち着いた、あるいは結局スマホを見てしまった… など"></textarea>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="section-block">
+        <div class="section-header">
+          <div class="section-number">3</div>
+          <h2 class="section-title">中国語日記と「習慣化」の意外なからくり</h2>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q7. 「一行も習慣になっていない」と書いた直後に書き始めた理由</span>
+            <span class="q-tag">習慣化</span>
+          </div>
+          <p class="q-desc">8/10の記事で「中国語日記はまだ一行も習慣になっていない」と書きつつ、実は8/4から中国語でDailyを埋め始めていました。何が最初の1行目を書かせたのでしょうか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 意気込んで始めたのか、それとも「たまたま適当に打ってみたら動いた」のか、ハードルを下げたコツ。
+          </div>
+          <textarea name="q7_1" placeholder="例：Dailyノートのテンプレートの冒頭に数行だけ中国語で書く枠を作ったら、息をするように書けた… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q8. 実際に中国語で自分の日常を表現してみた手応え</span>
+            <span class="q-tag">言語体験</span>
+          </div>
+          <p class="q-desc">母国語とは違う言語で「忙しかった」「画面を見すぎた」と愚痴や反省を書くとき、日本語で書くのとは異なる距離感や面白さはありましたか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 外国語を使うことで、感情が生々しくならず客観的な事実として眺められる効用など。
+          </div>
+          <textarea name="q8_1" placeholder="例：語彙が少ない分、感情的な自己嫌悪が混ざらず、単なる事実の報告になって気が楽だった… など"></textarea>
+        </div>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="section-block">
+        <div class="section-header">
+          <div class="section-number">4</div>
+          <h2 class="section-title">生成AI環境と「VRAM 8GB」の現実的パズル</h2>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q9. Win PC（ComfyUI）× Mac CLI連携が開通した手応え</span>
+            <span class="q-tag">開発パイプライン</span>
+          </div>
+          <p class="q-desc">Mac側のClaude CodeやAntigravityからWin PCのComfyUIを叩いて画像が出るようになった時、どんな可能性や気持ちよさを感じましたか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> 前週の「Fountain自動パイプライン」に続く、自分専用の工房づくり（クラフトマンシップ）。
+          </div>
+          <textarea name="q9_1" placeholder="例：Macの黒い画面にプロンプトを投げるだけで裏のゲーミングPCが唸りを上げて画像が戻ってくる快感… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q10. 「1枚絵から回転動画（Wan2.2）を作って多視点フレームを抜く」逆転の発想</span>
+            <span class="q-tag">技術的ブレイクスルー</span>
+          </div>
+          <p class="q-desc">キャラの一貫性を保つために「3Dメッシュではなく、動画拡散モデルの時間的一貫性を利用して回転動画からフレームを抜く」という発想に至ったときの経緯と、検証の手応えは？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> VRAM 8GBという制限の中で、最新の巨大モデルを追うのではなく「知恵と組み合わせ」で勝負する面白さ。
+          </div>
+          <textarea name="q10_1" placeholder="例：3Dで背面が破綻するなら動画に回させればいいと気づいた瞬間、パズルのピースが綺麗にハマった… など"></textarea>
+        </div>
+      </div>
+
+      <!-- SECTION 5 -->
+      <div class="section-block">
+        <div class="section-header">
+          <div class="section-number">5</div>
+          <h2 class="section-title">抜け漏れ・裏話・今週の着地点</h2>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q11. Dailyに書ききれなかった「その他の出来事・美味しかったもの」</span>
+            <span class="q-tag">生活・裏話</span>
+          </div>
+          <p class="q-desc">8/3〜8/9の間で、ノートには一行メモ程度だったけれど印象に残っていること（マーラーたん、誰かとの雑談、買ったもの、読んだ本など）はありますか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> エッセイ末尾の「その他」や「カルチャーメモ」を豊かにするスパイス。
+          </div>
+          <textarea name="q11_1" placeholder="例：久しぶりに食べた麻辣湯の辛さで目が覚めた、楽天Koboの積読を1冊消化した… など"></textarea>
+        </div>
+
+        <div class="question-card">
+          <div class="q-title">
+            <span>Q12. 今回の週報（W32）で読者に一番届けたい「核心の一言」</span>
+            <span class="q-tag">テーマ・結び</span>
+          </div>
+          <p class="q-desc">「島での海泳ぎ（フィジカル）」と「深夜の10時間画面凝視（デジタル）」を行き来したこの週。最終的に読者にどんな余韻を残して記事を締めくくりたいですか？</p>
+          <div class="q-intent">
+            💡 <strong>掘り下げの視点:</strong> この週報のタイトルやエピローグの決め手となるメッセージ。
+          </div>
+          <textarea name="q12_1" placeholder="例：人間は極端から極端へ揺れながらしか生きられない、泥臭い経験とスマートな仕組みの両輪を回していきたい… など"></textarea>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Markdown Preview Modal -->
+  <div class="modal-overlay" id="preview-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Markdown 出力プレビュー</h3>
+        <button type="button" class="btn-outline" onclick="closePreview()">✕ 閉じる</button>
+      </div>
+      <div class="modal-body">
+        <pre id="markdown-output"></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-primary" onclick="copyMarkdown()">クリップボードにコピー</button>
+        <button type="button" class="btn-secondary" onclick="downloadMarkdown()">.md ファイルとして保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast">クリップボードにコピーしました！</div>
+
+  <script>
+    const form = document.getElementById('interview-form');
+    const textareas = form.querySelectorAll('textarea');
+    const progressFill = document.getElementById('progress-fill');
+    const progressCount = document.getElementById('progress-count');
+    const toast = document.getElementById('toast');
+    const modal = document.getElementById('preview-modal');
+    const markdownOutput = document.getElementById('markdown-output');
+
+    const STORAGE_KEY = 'interview_sheet_2026_w32';
+
+    // Questions Mapping
+    const questionsMeta = [
+      { id: 'q1_1', title: 'Q1. 児童センター取材（8/4）と離島・家島（8/9）のリアルな空気感', section: '1. 家島の海と「夏ボラ」現地取材の深掘り' },
+      { id: 'q2_1', title: 'Q2. 生徒たちと一緒に海で泳いだ瞬間の「五感」と感情', section: '1. 家島の海と「夏ボラ」現地取材の深掘り' },
+      { id: 'q3_1', title: 'Q3. 海洋少年団・カヌー体験で気になった人や言葉', section: '1. 家島の海と「夏ボラ」現地取材の深掘り' },
+      { id: 'q4_1', title: 'Q4. 半休の午後から「エラー沼で5時間」に至る転落のプロセス', section: '2. 真夜中の10時間画面凝視と「肉体の復讐」' },
+      { id: 'q5_1', title: 'Q5. 翌朝の絶望感と「肉体は思想の証明書」のフラッシュバック', section: '2. 真夜中の10時間画面凝視と「肉体の復讐」' },
+      { id: 'q6_1', title: 'Q6. 「今夜はアナログに集中する」と誓って実際にやったこと', section: '2. 真夜中の10時間画面凝視と「肉体の復讐」' },
+      { id: 'q7_1', title: 'Q7. 「一行も習慣になっていない」と書いた直後に書き始めた理由', section: '3. 中国語日記と「習慣化」の意外なからくり' },
+      { id: 'q8_1', title: 'Q8. 実際に中国語で自分の日常を表現してみた手応え', section: '3. 中国語日記と「習慣化」の意外なからくり' },
+      { id: 'q9_1', title: 'Q9. Win PC（ComfyUI）× Mac CLI連携が開通した手応え', section: '4. 生成AI環境と「VRAM 8GB」の現実的パズル' },
+      { id: 'q10_1', title: 'Q10. 「1枚絵から回転動画（Wan2.2）を作って多視点フレームを抜く」逆転の発想', section: '4. 生成AI環境と「VRAM 8GB」の現実的パズル' },
+      { id: 'q11_1', title: 'Q11. Dailyに書ききれなかった「その他の出来事・美味しかったもの」', section: '5. 抜け漏れ・裏話・今週の着地点' },
+      { id: 'q12_1', title: 'Q12. 今回の週報（W32）で読者に一番届けたい「核心の一言」', section: '5. 抜け漏れ・裏話・今週の着地点' },
+    ];
+
+    // Load from LocalStorage
+    function loadSavedData() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          const data = JSON.parse(saved);
+          textareas.forEach(ta => {
+            if (data[ta.name]) {
+              ta.value = data[ta.name];
+            }
+          });
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      updateProgress();
+    }
+
+    // Save to LocalStorage
+    function saveData() {
+      const data = {};
+      textareas.forEach(ta => {
+        data[ta.name] = ta.value;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      updateProgress();
+    }
+
+    // Update Progress Bar
+    function updateProgress() {
+      let answered = 0;
+      textareas.forEach(ta => {
+        if (ta.value.trim().length > 0) {
+          answered++;
+        }
+      });
+      const total = textareas.length;
+      const pct = Math.round((answered / total) * 100);
+      progressFill.style.width = pct + '%';
+      progressCount.textContent = `${answered} / ${total} 問完了 (${pct}%)`;
+    }
+
+    // Generate Markdown Output
+    function generateMarkdown() {
+      let md = `# 2026-W32 (8/3〜8/9) 週報深層インタビュー回答\n\n`;
+      md += `> 作成日時: ${new Date().toLocaleString('ja-JP')}\n\n`;
+
+      let currentSection = '';
+
+      questionsMeta.forEach(q => {
+        if (q.section !== currentSection) {
+          currentSection = q.section;
+          md += `## ${currentSection}\n\n`;
+        }
+
+        const ta = form.querySelector(`textarea[name="${q.id}"]`);
+        const val = ta ? ta.value.trim() : '';
+
+        md += `### ${q.title}\n\n`;
+        if (val) {
+          md += `${val}\n\n`;
+        } else {
+          md += `*(未記入)*\n\n`;
+        }
+      });
+
+      return md;
+    }
+
+    // Toast Notification
+    function showToast(msg) {
+      toast.textContent = msg || 'コピーしました！';
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Copy Markdown
+    function copyMarkdown() {
+      const md = generateMarkdown();
+      navigator.clipboard.writeText(md).then(() => {
+        showToast('Markdownをクリップボードにコピーしました！');
+      }).catch(err => {
+        console.error(err);
+        showToast('コピーに失敗しました');
+      });
+    }
+
+    // Download Markdown
+    function downloadMarkdown() {
+      const md = generateMarkdown();
+      const blob = new Blob([md], { type: 'text/markdown;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `interview_answers_2026_w32_${new Date().toISOString().slice(0,10)}.md`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Markdownファイルを保存しました！');
+    }
+
+    // Modal Preview
+    function openPreview() {
+      markdownOutput.textContent = generateMarkdown();
+      modal.classList.add('open');
+    }
+
+    function closePreview() {
+      modal.classList.remove('open');
+    }
+
+    // Event Listeners
+    textareas.forEach(ta => {
+      ta.addEventListener('input', saveData);
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closePreview();
+      }
+    });
+
+    // Init
+    loadSavedData();
+  </script>
+</body>
+</html>

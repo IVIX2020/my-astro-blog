@@ -12,8 +12,25 @@ pubDate: 2026-09-01
 heroImage: ""
 bluesky:
   handle: "1610frms.bsky.social"
-  hashtag: "#amam2609"
+  hashtag: "#amam"
 tags: [AI, ComfyUI, Web漫画, 動画生成]
+todos:
+  - text: "静止画パイプラインの動画対応調査"
+    subtasks:
+      - text: "候補モデルの選定（Wan2.2など）"
+        done: true
+      - text: "VRAM 8GBでの動作可否を確認"
+        done: true
+      - text: "ComfyUIワークフローの試作"
+        done: false
+  - text: "キャラクター多角度カットの生成テスト"
+    subtasks:
+      - text: "3ポーズ分の元絵を用意"
+        done: false
+      - text: "1ポーズで5秒カットを作成"
+        done: false
+  - text: "成功基準（5秒カット10本）の達成"
+    done: false
 ---
 
 <!--

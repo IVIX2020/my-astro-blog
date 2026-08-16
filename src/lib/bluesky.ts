@@ -48,12 +48,26 @@ export interface BlueskyPost {
 	link: string;
 }
 
-export async function searchHashtag(hashtag: string): Promise<BlueskyPost[] | null> {
+export interface SearchHashtagRange {
+	since?: Date;
+	/** 終了日を含めたいので、内部でこの日の24時間後を until として渡す */
+	until?: Date;
+}
+
+export async function searchHashtag(
+	hashtag: string,
+	range: SearchHashtagRange = {},
+): Promise<BlueskyPost[] | null> {
 	const session = await getSession();
 	if (!session) return null;
 
 	try {
 		const params = new URLSearchParams({ q: hashtag, sort: 'latest', limit: '25' });
+		if (range.since) params.set('since', range.since.toISOString());
+		if (range.until) {
+			const untilInclusive = new Date(range.until.getTime() + 24 * 60 * 60 * 1000);
+			params.set('until', untilInclusive.toISOString());
+		}
 		const res = await fetch(`${ENTRYWAY}/xrpc/app.bsky.feed.searchPosts?${params}`, {
 			headers: { Authorization: `Bearer ${session.accessJwt}` },
 		});

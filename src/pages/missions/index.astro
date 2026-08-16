@@ -4,7 +4,9 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
+import ProgressGauge from '../../components/ProgressGauge.astro';
 import { SITE_TITLE } from '../../consts';
+import { calcProgress } from '../../lib/todos';
 
 const missions = (await getCollection('missions')).sort(
 	(a, b) => b.data.month.localeCompare(a.data.month),
@@ -50,13 +52,17 @@ const pageTitle = `${SITE_TITLE} / A Mission a Month`;
 				transition: 0.2s ease;
 			}
 			.card a {
-				display: block;
+				display: flex;
+				gap: .9rem;
+				align-items: center;
 				color: inherit;
 				text-decoration: none;
 				padding: 1rem 1.1rem 1.2rem;
 			}
 			.card:hover { transform: translateY(-2px); box-shadow: var(--box-shadow); }
 			.card:hover .title { color: rgb(var(--accent)); }
+
+			.card-body { flex: 1; min-width: 0; }
 
 			.status-badge {
 				display: inline-block;
@@ -91,16 +97,24 @@ const pageTitle = `${SITE_TITLE} / A Mission a Month`;
 					<p class="empty">まだミッションが登録されていません。</p>
 				) : (
 					<ul class="grid">
-						{missions.map((mission) => (
-							<li class="card">
-								<a href={`/my-astro-blog/missions/${mission.id}/`}>
-									<span class="status-badge">{statusLabel[mission.data.status]}</span>
-									<p class="month">{mission.data.month} ／ {mission.data.genre}</p>
-									<h3 class="title">{mission.data.title}</h3>
-									<p class="goal">{mission.data.goal}</p>
-								</a>
-							</li>
-						))}
+						{missions.map((mission) => {
+							const progress = calcProgress(mission.data.todos);
+							return (
+								<li class="card">
+									<a href={`/my-astro-blog/missions/${mission.id}/`}>
+										{mission.data.todos.length > 0 && (
+											<ProgressGauge percent={progress.percent} size={56} compact />
+										)}
+										<div class="card-body">
+											<span class="status-badge">{statusLabel[mission.data.status]}</span>
+											<p class="month">{mission.data.month} ／ {mission.data.genre}</p>
+											<h3 class="title">{mission.data.title}</h3>
+											<p class="goal">{mission.data.goal}</p>
+										</div>
+									</a>
+								</li>
+							);
+						})}
 					</ul>
 				)
 			}

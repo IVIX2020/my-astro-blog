@@ -1,0 +1,68 @@
+---
+import { isItemDone, type TodoItem } from '../lib/todos';
+
+interface Props {
+	todos: TodoItem[];
+}
+
+const { todos } = Astro.props;
+---
+
+{
+	todos.length > 0 && (
+		<ul class="todo-list">
+			{todos.map((item) => (
+				<li class="todo-item">
+					<div class="todo-row" class:list={{ done: isItemDone(item) }}>
+						<span class="todo-check">{isItemDone(item) ? '✅' : '⬜'}</span>
+						<span class="todo-text">{item.text}</span>
+					</div>
+					{item.subtasks.length > 0 && (
+						<ul class="todo-sublist">
+							{item.subtasks.map((sub) => (
+								<li class="todo-item sub">
+									<div class="todo-row" class:list={{ done: sub.done }}>
+										<span class="todo-check">{sub.done ? '✅' : '⬜'}</span>
+										<span class="todo-text">{sub.text}</span>
+									</div>
+								</li>
+							))}
+						</ul>
+					)}
+				</li>
+			))}
+		</ul>
+	)
+}
+
+<style>
+	.todo-list,
+	.todo-sublist {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.todo-sublist {
+		padding-left: 1.7rem;
+		margin-top: 0.2rem;
+	}
+	.todo-item {
+		padding: 0.3rem 0;
+	}
+	.todo-item.sub {
+		font-size: 0.9rem;
+		padding: 0.2rem 0;
+	}
+	.todo-row {
+		display: flex;
+		align-items: baseline;
+		gap: 0.45rem;
+	}
+	.todo-row.done .todo-text {
+		color: rgb(var(--gray));
+		text-decoration: line-through;
+	}
+	.todo-check {
+		flex-shrink: 0;
+	}
+</style>

@@ -8,6 +8,9 @@ import BlueskyFeed from '../components/BlueskyFeed.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import ProgressGauge from '../components/ProgressGauge.astro';
+import TodoList from '../components/TodoList.astro';
+import { calcProgress } from '../lib/todos';
 
 type Props = CollectionEntry<'missions'>['data'];
 
@@ -24,6 +27,7 @@ const {
 	updatedDate,
 	heroImage,
 	bluesky,
+	todos,
 } = Astro.props;
 
 const statusLabel: Record<typeof status, string> = {
@@ -32,6 +36,8 @@ const statusLabel: Record<typeof status, string> = {
 	completed: '達成',
 	failed: '未達成',
 };
+
+const progress = calcProgress(todos);
 ---
 
 <html lang="ja">
@@ -108,6 +114,34 @@ const statusLabel: Record<typeof status, string> = {
 			.mission-meta dd {
 				margin: 0;
 			}
+			.progress-section {
+				display: flex;
+				gap: 1.25rem;
+				align-items: flex-start;
+				background: rgba(var(--gray-light), 40%);
+				border-radius: 12px;
+				padding: 1.25rem;
+				margin: 0 0 1.5rem;
+			}
+			.progress-section h2 {
+				margin: 0 0 0.5rem;
+				font-size: 1rem;
+			}
+			.progress-body {
+				flex: 1;
+				min-width: 0;
+			}
+			.progress-summary {
+				font-size: 0.85rem;
+				color: rgb(var(--gray));
+				margin: 0 0 0.5rem;
+			}
+			@media (max-width: 480px) {
+				.progress-section {
+					flex-direction: column;
+					align-items: center;
+				}
+			}
 		</style>
 	</head>
 
@@ -154,10 +188,23 @@ const statusLabel: Record<typeof status, string> = {
 					</dl>
 
 					{
+						todos.length > 0 && (
+							<div class="progress-section">
+								<ProgressGauge percent={progress.percent} size={100} />
+								<div class="progress-body">
+									<h2>進捗</h2>
+									<p class="progress-summary">{progress.done} / {progress.total} 完了</p>
+									<TodoList todos={todos} />
+								</div>
+							</div>
+						)
+					}
+
+					{
 						bluesky && (
 							<>
 								<h2>📡 今月の更新ログ</h2>
-								<BlueskyFeed hashtag={bluesky.hashtag} />
+								<BlueskyFeed hashtag={bluesky.hashtag} since={startDate} until={endDate} />
 							</>
 						)
 					}

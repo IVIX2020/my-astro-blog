@@ -6,12 +6,14 @@ import { searchHashtag } from '../lib/bluesky';
 
 interface Props {
 	hashtag: string;
+	since?: Date;
+	until?: Date;
 }
 
-const { hashtag } = Astro.props;
+const { hashtag, since, until } = Astro.props;
 const searchUrl = `https://bsky.app/search?q=${encodeURIComponent(hashtag)}`;
 
-const result = await searchHashtag(hashtag);
+const result = await searchHashtag(hashtag, { since, until });
 const fetchFailed = result === null;
 const posts = result ?? [];
 ---

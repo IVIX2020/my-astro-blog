@@ -31,6 +31,11 @@ const products = defineCollection({
     }),
 });
 
+const todoLeaf = z.object({
+	text: z.string(),
+	done: z.boolean().default(false),
+});
+
 const missions = defineCollection({
 	// A Mission a Month: 1ヶ月ごとのミッション記事
 	loader: glob({ base: './src/content/missions', pattern: '**/*.{md,mdx}' }),
@@ -55,6 +60,15 @@ const missions = defineCollection({
 					hashtag: z.string(),
 				})
 				.optional(),
+			// 進捗ダッシュボード用のTODOリスト（2階層まで）。サブタスクがある項目は
+			// サブタスクの完了率で進捗を計算し、親項目自身のdoneは無視する。
+			todos: z
+				.array(
+					todoLeaf.extend({
+						subtasks: z.array(todoLeaf).default([]),
+					}),
+				)
+				.default([]),
 			tags: z.array(z.string()).default([]),
 		}),
 });

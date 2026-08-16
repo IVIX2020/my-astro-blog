@@ -12,7 +12,7 @@ pubDate: 2026-09-01
 heroImage: ""
 bluesky:
   handle: "1610frms.bsky.social"
-  hashtag: "#OMOM2609"
+  hashtag: "#amam2609"
 tags: [AI, ComfyUI, Web漫画, 動画生成]
 ---
 

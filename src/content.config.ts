@@ -32,7 +32,7 @@ const products = defineCollection({
 });
 
 const missions = defineCollection({
-	// One Mission One Month: 1ヶ月ごとのミッション記事
+	// A Mission a Month: 1ヶ月ごとのミッション記事
 	loader: glob({ base: './src/content/missions', pattern: '**/*.{md,mdx}' }),
 	schema: ({ image }) =>
 		z.object({

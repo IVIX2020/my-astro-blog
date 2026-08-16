@@ -1,0 +1,86 @@
+---
+// Blueskyの匿名公開検索APIは現在未認証アクセスを403で弾くため、
+// App Passwordでの認証セッション経由でビルド時（Node.js環境）に取得する。
+// 最新化にはリビルドが必要（.github/workflows/deploy.yml のscheduledジョブが日次で再ビルドする）。
+import { searchHashtag } from '../lib/bluesky';
+
+interface Props {
+	hashtag: string;
+}
+
+const { hashtag } = Astro.props;
+const searchUrl = `https://bsky.app/search?q=${encodeURIComponent(hashtag)}`;
+
+const result = await searchHashtag(hashtag);
+const fetchFailed = result === null;
+const posts = result ?? [];
+---
+
+<div class="bluesky-feed">
+	{
+		fetchFailed ? (
+			<p class="bluesky-feed-status">投稿の取得に失敗しました。下のリンクから確認してください。</p>
+		) : posts.length === 0 ? (
+			<p class="bluesky-feed-status">まだ{hashtag}の投稿はありません。</p>
+		) : (
+			posts.map((post) => (
+				<div class="bluesky-post">
+					<p class="bluesky-post-meta">
+						<a href={post.link} target="_blank" rel="noopener">
+							{post.createdAt && new Date(post.createdAt).toLocaleString('ja-JP')}
+						</a>
+					</p>
+					<p class="bluesky-post-text">{post.text}</p>
+				</div>
+			))
+		)
+	}
+</div>
+<p class="bluesky-feed-fallback">
+	<a href={searchUrl} target="_blank" rel="noopener">Blueskyで{hashtag}を見る →</a>
+</p>
+<p class="bluesky-feed-note">※このセクションは直近のビルド時点のスナップショットです。最新の投稿は上のリンクから確認できます。</p>
+
+<style>
+	.bluesky-feed {
+		border-left: 3px solid rgb(var(--accent));
+		padding-left: 1rem;
+		margin: 1.5rem 0 0.5rem;
+	}
+	.bluesky-post {
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid rgba(var(--gray), 25%);
+	}
+	.bluesky-post:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	.bluesky-post-meta {
+		font-size: 0.8rem;
+		color: rgb(var(--gray));
+		margin: 0 0 0.25rem;
+	}
+	.bluesky-post-meta a {
+		color: inherit;
+	}
+	.bluesky-post-text {
+		margin: 0;
+		white-space: pre-wrap;
+	}
+	.bluesky-feed-status {
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+		margin: 0;
+	}
+	.bluesky-feed-fallback {
+		font-size: 0.85rem;
+		margin: 0 0 0.25rem;
+	}
+	.bluesky-feed-note {
+		font-size: 0.75rem;
+		color: rgb(var(--gray));
+		margin: 0 0 1.5rem;
+	}
+</style>

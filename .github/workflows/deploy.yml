@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # One Mission One Month のBluesky更新ログを反映するための日次リビルド (21:00 UTC = 06:00 JST)
+    - cron: '0 21 * * *'
 
 permissions:
   contents: read
@@ -32,6 +35,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

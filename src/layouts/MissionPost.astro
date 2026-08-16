@@ -1,0 +1,171 @@
+---
+import '../styles/callout.css';
+
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import BlueskyFeed from '../components/BlueskyFeed.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+
+type Props = CollectionEntry<'missions'>['data'];
+
+const {
+	title,
+	description,
+	genre,
+	goal,
+	successCriteria,
+	status,
+	startDate,
+	endDate,
+	pubDate,
+	updatedDate,
+	heroImage,
+	bluesky,
+} = Astro.props;
+
+const statusLabel: Record<typeof status, string> = {
+	planning: '準備中',
+	'in-progress': '進行中',
+	completed: '達成',
+	failed: '未達成',
+};
+---
+
+<html lang="ja">
+	<head>
+		<BaseHead title={title} description={description} image={heroImage} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+			.status-badge {
+				display: inline-block;
+				font-size: 0.8rem;
+				padding: 0.2rem 0.7rem;
+				border-radius: 999px;
+				border: 1px solid rgba(var(--gray), 40%);
+				color: rgb(var(--gray-dark));
+				margin-bottom: 0.75rem;
+			}
+			.status-badge[data-status='completed'] {
+				border-color: rgb(var(--accent));
+				color: rgb(var(--accent));
+			}
+			.status-badge[data-status='failed'] {
+				border-color: rgb(var(--gray-dark));
+			}
+			.mission-meta {
+				background: rgba(var(--gray-light), 40%);
+				border-radius: 12px;
+				padding: 1rem 1.25rem;
+				margin: 0 0 1.5rem;
+			}
+			.mission-meta dt {
+				font-size: 0.8rem;
+				color: rgb(var(--gray));
+				margin: 0.75rem 0 0.15rem;
+			}
+			.mission-meta dt:first-child {
+				margin-top: 0;
+			}
+			.mission-meta dd {
+				margin: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+				<div class="hero-image">
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+				</div>
+				<div class="prose">
+					<div class="title">
+						<div class="date">
+							<FormattedDate date={pubDate} />
+							{
+								updatedDate && (
+									<div class="last-updated-on">Last updated on <FormattedDate date={updatedDate} /></div>
+								)
+							}
+						</div>
+						<span class="status-badge" data-status={status}>{statusLabel[status]}</span>
+						<h1>{title}</h1>
+						<hr />
+					</div>
+
+					<dl class="mission-meta">
+						<dt>ジャンル</dt>
+						<dd>{genre}</dd>
+						<dt>期間</dt>
+						<dd>
+							<FormattedDate date={startDate} />
+							{endDate && <> 〜 <FormattedDate date={endDate} /></>}
+						</dd>
+						<dt>目標</dt>
+						<dd>{goal}</dd>
+						{
+							successCriteria && (
+								<>
+									<dt>成功の定義</dt>
+									<dd>{successCriteria}</dd>
+								</>
+							)
+						}
+					</dl>
+
+					{
+						bluesky && (
+							<>
+								<h2>📡 今月の更新ログ</h2>
+								<BlueskyFeed hashtag={bluesky.hashtag} />
+							</>
+						)
+					}
+
+					<slot />
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>

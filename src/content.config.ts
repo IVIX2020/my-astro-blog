@@ -31,4 +31,32 @@ const products = defineCollection({
     }),
 });
 
-export const collections = { blog, products };
+const missions = defineCollection({
+	// One Mission One Month: 1ヶ月ごとのミッション記事
+	loader: glob({ base: './src/content/missions', pattern: '**/*.{md,mdx}' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			genre: z.string(),
+			month: z.string(), // "2026-09" 形式
+			goal: z.string(),
+			successCriteria: z.string().optional(),
+			status: z.enum(['planning', 'in-progress', 'completed', 'failed']).default('planning'),
+			startDate: z.coerce.date(),
+			endDate: z.coerce.date().optional(),
+			pubDate: z.coerce.date(),
+			updatedDate: z.coerce.date().optional(),
+			result: z.string().optional(),
+			heroImage: image().optional(),
+			bluesky: z
+				.object({
+					handle: z.string().optional(),
+					hashtag: z.string(),
+				})
+				.optional(),
+			tags: z.array(z.string()).default([]),
+		}),
+});
+
+export const collections = { blog, products, missions };

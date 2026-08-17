@@ -204,7 +204,12 @@ const progress = calcProgress(todos);
 						bluesky && (
 							<>
 								<h2>📡 今月の更新ログ</h2>
-								<BlueskyFeed hashtag={bluesky.hashtag} since={startDate} until={endDate} />
+								<BlueskyFeed
+									hashtag={bluesky.hashtag}
+									author={bluesky.handle}
+									since={startDate}
+									until={endDate}
+								/>
 							</>
 						)
 					}

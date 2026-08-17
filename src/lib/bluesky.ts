@@ -56,13 +56,15 @@ export interface SearchHashtagRange {
 
 export async function searchHashtag(
 	hashtag: string,
+	author: string,
 	range: SearchHashtagRange = {},
 ): Promise<BlueskyPost[] | null> {
 	const session = await getSession();
 	if (!session) return null;
 
 	try {
-		const params = new URLSearchParams({ q: hashtag, sort: 'latest', limit: '25' });
+		// authorを指定しないと、無関係な他人の同名タグ投稿まで混ざる（#amamは他ユーザーも使う一般的なタグ）
+		const params = new URLSearchParams({ q: hashtag, author, sort: 'latest', limit: '25' });
 		if (range.since) params.set('since', range.since.toISOString());
 		if (range.until) {
 			const untilInclusive = new Date(range.until.getTime() + 24 * 60 * 60 * 1000);

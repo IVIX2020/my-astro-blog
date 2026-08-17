@@ -56,7 +56,8 @@ const missions = defineCollection({
 			heroImage: image().optional(),
 			bluesky: z
 				.object({
-					handle: z.string().optional(),
+					// authorとして検索を絞り込むのに必須（絞らないと同名タグを使う他ユーザーの投稿が混ざる）
+					handle: z.string(),
 					hashtag: z.string(),
 				})
 				.optional(),

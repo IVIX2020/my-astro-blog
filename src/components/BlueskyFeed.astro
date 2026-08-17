@@ -6,14 +6,16 @@ import { searchHashtag } from '../lib/bluesky';
 
 interface Props {
 	hashtag: string;
+	author: string;
 	since?: Date;
 	until?: Date;
 }
 
-const { hashtag, since, until } = Astro.props;
-const searchUrl = `https://bsky.app/search?q=${encodeURIComponent(hashtag)}`;
+const { hashtag, author, since, until } = Astro.props;
+// from: を付けて自分の投稿だけに絞る（#amamは他ユーザーも使う一般的なタグのため）
+const searchUrl = `https://bsky.app/search?q=${encodeURIComponent(`${hashtag} from:${author}`)}`;
 
-const result = await searchHashtag(hashtag, { since, until });
+const result = await searchHashtag(hashtag, author, { since, until });
 const fetchFailed = result === null;
 const posts = result ?? [];
 ---

@@ -82,4 +82,4 @@ Blueskyの匿名公開API（`public.api.bsky.app`）は `searchPosts` への未�
 2. 月内: 普段どおりBlueskyに`#amam`付きで投稿するだけ（記事は書き換えない。月替わりでタグを変える必要もない）。タスクが進んだら`todos`の該当項目の`done: true`を更新してコミットすれば、ダッシュボードの進捗率も連動して上がる
 3. 月末: 振り返りセクションを執筆し、`status: completed`または`failed`に更新
 
-現在 `src/content/missions/2026-09-ai-video-pipeline/index.md` は**動作確認用のサンプル記事**（架空の内容）。実際の9月ミッションが決まったら中身を差し替える。
+最初の実ミッションは `src/content/missions/2026-10-japanese-music-intro`（動作確認用だった架空の9月サンプル記事は削除済み。日本の伝統音楽の入門動画・約30分をYouTubeで公開する。制作物は iCloud 上の `2026/creative/video/japanese tradition` にあるRemotionプロジェクトで、そこにある十話構成「日本の音のしくみ」はあくまでテスト版。公開時はそれらをつなげ、初心者向けに組み直した1本にする）。

@@ -7,9 +7,12 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-// Fetch all posts and sort them by date
+// Fetch all posts and sort them by date. Posts published on the same day
+// (e.g. two weeklies at once) fall back to id, so W45 comes before W44.
 const allPosts = (await getCollection('blog')).sort(
-	(a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0),
+	(a, b) =>
+		(b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0) ||
+		b.id.localeCompare(a.id),
 );
 
 const weeklyPosts = [];
